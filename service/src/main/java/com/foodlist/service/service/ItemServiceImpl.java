@@ -12,4 +12,7 @@ import java.util.List;
 @Service
 public class ItemServiceImpl implements ItemService {
 
+
+    public void addItem(Item item) {}
+
 }

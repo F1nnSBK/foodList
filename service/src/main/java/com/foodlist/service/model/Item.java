@@ -31,19 +31,19 @@ public class Item {
     @Column(name = "added_at", nullable = false)
     private LocalDate addedAt;
 
-    @Column(name = "added_by_user_id")
-    private Long addedByUserId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "added_by_user_id")
+    private User addedBy;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "shopping_list_id")
     private ShoppingList shoppingList;
 
-    public Item(String name, int quantity, boolean isChecked, LocalDate addedAt, Long addedByUserId) {
+    public Item(String name, int quantity, boolean isChecked, LocalDate addedAt) {
         this.name = name;
         this.quantity = quantity;
         this.isChecked = isChecked;
         this.addedAt = addedAt;
-        this.addedByUserId = addedByUserId;
     }
 
 }

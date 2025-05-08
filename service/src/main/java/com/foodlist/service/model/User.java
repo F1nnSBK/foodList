@@ -6,6 +6,8 @@ import lombok.Setter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -28,6 +30,9 @@ public class User {
     @ManyToOne
     @JoinColumn(name = "household_id")
     private Household household;
+
+    @OneToMany(mappedBy = "addedBy")
+    List<Item> itemsAdded = new ArrayList<>();
 
     @Column(name = "name")
     private String name;

@@ -4,7 +4,7 @@ package com.foodlist.service.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,16 +30,16 @@ public class Household {
     private List<ShoppingList> shoppingLists = new ArrayList<>();
 
     @Column(name = "created_at", nullable = false)
-    private LocalDate createdAt;
+    private LocalDateTime createdAt;
 
-    public Household(String name) {
+    public Household(String name, LocalDateTime createdAt) {
         this.name = name;
-        this.createdAt = LocalDate.now();
+        this.createdAt = createdAt;
     }
 
-    public Household(String name, List<User> users) {
+    public Household(String name, List<User> users, LocalDateTime createdAt) {
         this.name = name;
-        this.createdAt = LocalDate.now();
+        this.createdAt = createdAt;
         this.users.addAll(users);
     }
 

@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,21 +41,21 @@ public class User {
     private boolean enabled;
 
     @Column(name = "created_at", nullable = false)
-    private LocalDate createdAt;
+    private LocalDateTime createdAt;
 
-    public User(String username, String passwordHash, boolean enabled) {
+    public User(String username, String passwordHash, boolean enabled, LocalDateTime createdAt) {
         this.username = username;
         this.passwordHash = passwordHash;
         this.enabled = enabled;
-        this.createdAt = LocalDate.now();
+        this.createdAt = createdAt;
     }
 
-    public User(String username, String passwordHash, Household household, boolean enabled) {
+    public User(String username, String passwordHash, Household household, boolean enabled, LocalDateTime createdAt) {
         this.username = username;
         this.passwordHash = passwordHash;
         this.household = household;
         this.enabled = enabled;
-        this.createdAt = LocalDate.now();
+        this.createdAt = createdAt;
     }
 
 }

@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -29,7 +29,7 @@ public class Item {
     private boolean isChecked;
 
     @Column(name = "added_at", nullable = false)
-    private LocalDate addedAt;
+    private LocalDateTime addedAt;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "added_by_user_id")
@@ -39,7 +39,7 @@ public class Item {
     @JoinColumn(name = "shopping_list_id")
     private ShoppingList shoppingList;
 
-    public Item(String name, int quantity, boolean isChecked, LocalDate addedAt) {
+    public Item(String name, int quantity, boolean isChecked, LocalDateTime addedAt) {
         this.name = name;
         this.quantity = quantity;
         this.isChecked = isChecked;

@@ -11,10 +11,15 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 public class UserDTO {
-    Long id;
+    private Long id;
+
     private String username;
-    String passwordHash;
-    String name;
-    boolean enabled;
-    LocalDateTime createdAt;
+
+    private String name;
+
+    private boolean enabled;
+
+    private LocalDateTime createdAt;
+
+    private Long householdId;
 }

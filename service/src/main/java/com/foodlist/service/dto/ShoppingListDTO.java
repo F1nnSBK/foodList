@@ -1,21 +1,27 @@
 package com.foodlist.service.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.Value;
+import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * DTO for {@link com.foodlist.service.model.ShoppingList}
  */
 @Getter
 @Setter
+@NoArgsConstructor
 @AllArgsConstructor
 public class ShoppingListDTO {
-    Long id;
-    String name;
-    boolean isDefault;
-    LocalDateTime createdAt;
+    private Long id;
+
+    private String name;
+
+    private boolean isDefault;
+
+    private LocalDateTime createdAt;
+
+    private Long householdId;
+
+    private List<ItemDTO> items;
 }

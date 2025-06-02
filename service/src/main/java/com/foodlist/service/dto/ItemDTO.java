@@ -1,8 +1,14 @@
 package com.foodlist.service.dto;
 
+import com.foodlist.service.model.ShoppingList;
+import com.foodlist.service.model.User;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.time.LocalDateTime;
 
 
 /**
@@ -10,12 +16,21 @@ import lombok.Setter;
  */
 @Getter
 @Setter
+@NoArgsConstructor
 @AllArgsConstructor
 public class ItemDTO{
+
     private Long id;
 
-    String name;
-    int quantity;
-    boolean isChecked;
+    private String name;
 
+    private int quantity;
+
+    private boolean isChecked;
+
+    private LocalDateTime addedAt;
+
+    private Long addedByUserId;
+
+    private Long shoppingListId;
 }
